@@ -2,6 +2,8 @@
 
 ### Proyecto:
 * Aplicación Supermercado (Consola)
+Nota: Posteriormente link de youtube:
+
 
 ### Temas:
 * Variables y Tipos de Datos
@@ -19,13 +21,14 @@
 4. How to use: 
 
 > from prettytable import PrettyTable
-
+> 
 > x = PrettyTable()
-
+> 
 > x.field_names = ["City name", "Area", "Population"]
-
+> 
 > x.add_row(["Adelaide", 1295, 1158259])
-
+> 
 > x.add_row(["Brisbane", 5905, 1857594])
-
+> 
 > print(x)
+
