@@ -1,3 +1,13 @@
+stock = [ 	{	"id":1,
+				"producto":"Coca-Cola",
+				"cantidad":300,
+				"precio_u":174.0		},
+
+			{	"id":1,
+				"producto":"Coca-Cola",
+				"cantidad":300,
+				"precio_u":174.0		}	]
+
 def Agregar(productos):
 	
 	# tener una variable donde guardar

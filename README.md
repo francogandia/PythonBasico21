@@ -1,8 +1,7 @@
 # Curso de Python - Nivel Básico 2021
 
-### Proyectos:
+### Proyecto:
 * Aplicación Supermercado (Consola)
-* otros...
 
 ### Temas:
 * Variables y Tipos de Datos

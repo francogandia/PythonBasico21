@@ -20,7 +20,7 @@ while True:
 	elif opc ==3:
 		Ver(lista_productos)
 	elif opc==4:
-		print("Adios")
+		print("Adios, gracias por tu visita!!!")
 		break
 	else:
 		print("opcion incorrecta elija otra")
