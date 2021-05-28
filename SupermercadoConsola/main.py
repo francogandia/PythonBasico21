@@ -10,6 +10,7 @@ menu = """========== MENU ==========
 
 # Ciclo principal de interaccion
 while True:
+	print()
 	print(menu)
 	opc = int(input(">> "))
 
@@ -18,7 +19,7 @@ while True:
 	elif opc==2:
 		Eliminar()
 	elif opc ==3:
-		Ver(lista_productos)
+		Ver()
 	elif opc==4:
 		print("Adios, gracias por tu visita!!!")
 		break
