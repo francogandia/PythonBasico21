@@ -72,7 +72,6 @@ def Eliminar():
 	prod = numProducto
 
 	for producto in carrito[pos:len(carrito)]:
-		print("actualizando:", producto)
 		producto["producto"] = prod
 		prod+=1
 
