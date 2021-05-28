@@ -17,19 +17,19 @@ stock = [
 				"precio_u":607.0		},
 
 			{	"id":3,
-				"nombre":"Tomates",
-				"cantidad":500,
-				"precio_u":199.0		},
+				"nombre":"Ron-Malibu",
+				"cantidad":150,
+				"precio_u":899.0		},
 
 			{	"id":4,
-				"nombre":"Facturas",
-				"cantidad":180,
-				"precio_u":229.0		},
+				"nombre":"Andes-Roja",
+				"cantidad":600,
+				"precio_u":133.0		},
 
 			{	"id":5,
-				"nombre":"Fideos",
-				"cantidad":600,
-				"precio_u":82.0			}	
+				"nombre":"Malbec",
+				"cantidad":200,
+				"precio_u":800.0		}	
 											]
 
 encabezados_carrito = ["producto","id","nombre","cantidad","precio_u","precio_c"]
@@ -72,6 +72,7 @@ def Eliminar():
 	prod = numProducto
 
 	for producto in carrito[pos:len(carrito)]:
+		print("actualizando:", producto)
 		producto["producto"] = prod
 		prod+=1
 
