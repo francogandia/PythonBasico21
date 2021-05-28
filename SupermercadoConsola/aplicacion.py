@@ -37,10 +37,44 @@ encabezados_carrito = ["producto","id","nombre","cantidad","precio_u","precio_c"
 carrito = []
 
 def Agregar():
-	print("Agregando producto")
+	# Mostrar el catalogo
+	print("Elegir un producto de la lista para AGREGAR:")
+	Ver(stock,encabezados_stock)
+	ID = int(input("Ingrese numero de producto>> ")) # "2" -> 2
+	cantidad = float(input("Que cantidad quiere llevar? >> "))
+	
+	productoAgregar = {	
+						"producto":len(carrito)+1, # automatico
+						"id":ID,
+						"nombre":stock[ID-1]["nombre"],
+						"cantidad":cantidad,
+						"precio_u":stock[ID-1]["precio_u"],
+						"precio_c":cantidad*stock[ID-1]["precio_u"]
+																	}
+
+	carrito.append(productoAgregar)
 
 def Eliminar():
-	print("Eliminando producto")
+	print("Elegir un producto de la lista para ELIMINAR:")
+	Ver(carrito,encabezados_carrito)
+	prod = int(input("Numero de producto>> ")) # fila 2
 
-def Ver(lista=None,encab=None):
-    print("Viendo productos")
+	productoEliminar = carrito.pop(prod-1) # devuelve la fila eliminada (subindice 1)
+
+	numProducto = productoEliminar["producto"] # num prod: 2
+	for producto in carrito[prod-1:len(carrito)]:
+		producto["producto"] = numProducto
+		numProducto+=1
+
+
+
+def Ver(listaProductos=carrito,encabezados=encabezados_carrito):
+	if len(listaProductos)>0:
+		#mostrar
+		tabla = PrettyTable()
+		tabla.field_names = encabezados
+		for producto in listaProductos:
+			tabla.add_row(producto.values())
+		print(tabla)
+	else:
+		print("No hay productos para mostrar")
