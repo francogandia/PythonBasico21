@@ -1,7 +1,17 @@
 # =========================================================
 # ================= Capa de Aplicacion ====================
 # =========================================================
-from prettytable import PrettyTable
+try:
+	from prettytable import PrettyTable
+except:
+	print("No esta instalado: PrettyTable")
+	import sys
+	import subprocess
+
+	# implement pip as a subprocess:
+	subprocess.check_call([sys.executable, '-m', 'pip', 'install',
+	'prettytable'])
+	print("Se instalo: PrettyTable")
 
 encabezados_stock = ["id","nombre","cantidad","precio_u"]
 
