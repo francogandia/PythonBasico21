@@ -12,6 +12,7 @@ except:
 	subprocess.check_call([sys.executable, '-m', 'pip', 'install',
 	'prettytable'])
 	print("Se instalo: PrettyTable")
+	from prettytable import PrettyTable
 
 encabezados_stock = ["id","nombre","cantidad","precio_u"]
 
