@@ -1,21 +1,21 @@
 # Curso de Python - Nivel Básico 2021
 
-### Proyecto:
-* Aplicación Supermercado (Consola)
-Nota: Posteriormente link de youtube:
+## Proyectos:
+> * Aplicación Supermercado (Consola).
+>   * [Explicación-Parte1](https://www.youtube.com/watch?v=Us735zC_g-E) | [Resolución-Parte2](https://youtu.be/LV4ukfbjJIY).
+> * Otros proyectos en proceso...
 
-
-### Temas:
+## Temas:
 * Variables y Tipos de Datos
-* Numeros y Operadores Aritmeticos
+* Números y Operadores Aritmeticos
 * Operadores y Operaciones
 * Condicionales (IF-ELFE-ELIF)
 * Bucles (FOR-WHILE)
 * Datos con Métodos (Listas-Diccionarios-Strings)
-* Funciones (def-lambda)
+* Funciones y Módulos
 
-### Instalación Librerias
-1. Primero Instalar pip (https://phoenixnap.com/kb/install-pip-windows#ftoc-heading-4)
+## Librerias - Ejemplo PrettyTable
+1. Primero Instalar pip (https://phoenixnap.com/kb/install-pip-windows#ftoc-heading-4).
 2. Instalar Libreria PrettyTable (https://pypi.org/project/prettytable/)
 3. Comando: **pip install prettytable**
 4. How to use: 
