@@ -14,8 +14,7 @@ class cube(object):
         self.dirnx = 1
         self.dirny = 0
         self.color = color
- 
-       
+   
     def move(self, dirnx, dirny):
         self.dirnx = dirnx
         self.dirny = dirny
@@ -86,8 +85,7 @@ class snake(object):
                 elif c.dirny == 1 and c.pos[1] >= c.rows-1: c.pos = (c.pos[0], 0)
                 elif c.dirny == -1 and c.pos[1] <= 0: c.pos = (c.pos[0],c.rows-1)
                 else: c.move(c.dirnx,c.dirny)
-       
- 
+
     def reset(self, pos):
         self.head = cube(pos)
         self.body = []
@@ -95,8 +93,7 @@ class snake(object):
         self.turns = {}
         self.dirnx = 0
         self.dirny = 1
- 
- 
+
     def addCube(self):
         tail = self.body[-1]
         dx, dy = tail.dirnx, tail.dirny
@@ -112,8 +109,7 @@ class snake(object):
  
         self.body[-1].dirnx = dx
         self.body[-1].dirny = dy
-       
- 
+
     def draw(self, surface):
         for i, c in enumerate(self.body):
             if i ==0:
@@ -154,16 +150,6 @@ def randomSnack(rows, item):
             break
        
     return (x,y)
-  
-def message_box(subject, content):
-    root = tk.Tk()
-    root.attributes("-topmost", True)
-    root.withdraw()
-    messagebox.showinfo(subject, content)
-    try:
-        root.destroy()
-    except:
-        pass
 
 def main():
     global width, rows, s, snack
@@ -177,7 +163,7 @@ def main():
     clock = pygame.time.Clock()
    
     while flag:
-        pygame.time.delay(50)
+        pygame.time.delay(60)
         clock.tick(10)
         s.move()
         if s.body[0].pos == snack.pos:
@@ -186,8 +172,8 @@ def main():
  
         for x in range(len(s.body)):
             if s.body[x].pos in list(map(lambda z:z.pos,s.body[x+1:])):
+                print("You Lost!, Play again...")
                 print(f"Score: {len(s.body)}")
-                message_box("You Lost!, Play again...", "Lost")
                 s.reset((10,10))
                 break
  
