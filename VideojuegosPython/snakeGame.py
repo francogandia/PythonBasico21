@@ -1,5 +1,6 @@
 #Snake Tutorial Python
- 
+# Video: 
+
 import math
 import random
 import pygame
@@ -11,8 +12,8 @@ class cube(object):
     w = 500
     def __init__(self,start,dirnx=1,dirny=0,color=(255,0,0)):
         self.pos = start
-        self.dirnx = 1
-        self.dirny = 0
+        self.dirnx = dirnx
+        self.dirny = dirny
         self.color = color
    
     def move(self, dirnx, dirny):
@@ -119,13 +120,13 @@ class snake(object):
 
 def drawGrid(w, rows, surface):
     sizeBtwn = w // rows
- 
+
     x = 0
     y = 0
     for l in range(rows):
         x = x + sizeBtwn
         y = y + sizeBtwn
- 
+
         pygame.draw.line(surface, (255,255,255), (x,0),(x,w))
         pygame.draw.line(surface, (255,255,255), (0,y),(w,y))
 
@@ -138,9 +139,9 @@ def redrawWindow(surface):
     pygame.display.update()
 
 def randomSnack(rows, item):
- 
+
     positions = item.body
- 
+
     while True:
         x = random.randrange(rows)
         y = random.randrange(rows)
@@ -148,7 +149,7 @@ def randomSnack(rows, item):
             continue
         else:
             break
-       
+    
     return (x,y)
 
 def main():
@@ -159,9 +160,9 @@ def main():
     s = snake((255,0,0), (10,10))
     snack = cube(randomSnack(rows, s), color=(0,255,0))
     flag = True
- 
+
     clock = pygame.time.Clock()
-   
+
     while flag:
         pygame.time.delay(60)
         clock.tick(10)
@@ -169,14 +170,14 @@ def main():
         if s.body[0].pos == snack.pos:
             s.addCube()
             snack = cube(randomSnack(rows, s), color=(0,255,0))
- 
+
         for x in range(len(s.body)):
             if s.body[x].pos in list(map(lambda z:z.pos,s.body[x+1:])):
                 print("You Lost!, Play again...")
                 print(f"Score: {len(s.body)}")
                 s.reset((10,10))
                 break
- 
+
         redrawWindow(win)
 
 main()
